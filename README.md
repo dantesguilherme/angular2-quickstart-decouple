@@ -5,7 +5,7 @@
 * Added `bs-config.js` to make *browser-sync* from different directories.
 
 ```bash
-git clone https://github.com/dantesguilherme/ng2-quickstart-decouple.git
+git clone https://github.com/dantesguilherme/angular2-quickstart-decouple.git
 ```
 
 ### Start development
