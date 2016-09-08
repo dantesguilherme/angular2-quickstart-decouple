@@ -1,4 +1,4 @@
-# ng2-quickstart-decouple
+# angular2-quickstart-decouple
 * Template based on https://github.com/angular/quickstart.
 * Added gulp to install process. 
 * Configurations to transpile work from different directories.
@@ -32,4 +32,5 @@ with excellent support for Angular apps that use routing.
 * `npm run postinstall` - called by *npm* automatically *after* it successfully completes package installation. This script installs the TypeScript definition files this app requires. I just added the `gulp restore` to move the dependencies to the `wwwroot` folder at the end of this command.
 
 Uses gulp to moves the _needed_ application files and dependencies to the `wwwroot` folder.
+
 Uses browser-sync to keep multiple browsers & devices in sync when building websites.
