@@ -24,22 +24,23 @@ Uses gulp to moves the _needed_ application files and dependencies to the `wwwro
 Uses browser-sync to keep multiple browsers & devices in sync when building websites.
 
 ##Behind a Proxy?
-git example
+*git example*
 ```bash
-git config --global http.proxy http://user:passwor@proxy.yourcompany.com:8080
+git config --global http.proxy http://user:password@proxy.yourcompany.com:8080
 ```
-npm example
+*npm example*
 ```bash
-npm config set proxy http://user:passwor@proxy.yourcompany.com:8080
-npm config set https-proxy http://user:passwor@proxy.yourcompany.com:8080
+npm config set proxy http://user:password@proxy.yourcompany.com:8080
+npm config set https-proxy http://user:password@proxy.yourcompany.com:8080
 ```
-typings
-create a file `.typingsrc` in user home directory (eg. C:\Users\MyName\) and use this text
+*typings example*
+* documentation - https://github.com/typings/typings/blob/master/docs/faq.md#configuration
+* create a file `.typingsrc` in user home directory (eg. C:\Users\MyName\) and use this text
 ```bash
 {
-	"proxy": "http://user:passwor@proxy.yourcompany.com:8080"
+	"proxy": "http://user:password@proxy.yourcompany.com:8080"
 }
 ```
-documentation - https://github.com/typings/typings/blob/master/docs/faq.md#configuration
+
 
 
