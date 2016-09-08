@@ -1,8 +1,12 @@
-# ng2-decoupled
+# ng2-quickstart-decouple
 * Template based on https://github.com/angular/quickstart.
 * Added gulp to install process. 
 * Configurations to transpile work from different directories.
 * Added `bs-config.js` to make *browser-sync* from different directories.
+
+```bash
+git clone https://github.com/dantesguilherme/ng2-quickstart-decouple.git
+```
 
 ### Start development
 
