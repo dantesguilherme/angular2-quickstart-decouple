@@ -5,7 +5,10 @@ gulp.task('default', function () {
     // place code for your default task here
 });
 
-gulp.task('restore', function() {
+gulp.task('cleanwwwroot', function(){
+    return del(["../wwwroot/node_modules/**", "!../wwwroot/node_modules"], {force: true});
+});
+gulp.task('restore', ['cleanwwwroot'], function() {
     gulp.src([
         'node_modules/@angular/**/*.js',
         'node_modules/angular2-in-memory-web-api/*.js',
@@ -19,11 +22,13 @@ gulp.task('restore', function() {
     ], { base: './node_modules' }).pipe(gulp.dest('../wwwroot/node_modules'));
 });
 
-gulp.task('docs', function() {
+gulp.task('cleandocs', function(){
+    return del(["../docs/**", "!../docs"], {force: true});
+});
+gulp.task('docs', ['cleandocs'], function() {
     gulp.src('../wwwroot/**/*.*')
     .pipe(gulp.dest('../docs/'));
 });
 
-gulp.task('clean', function(){
-    return del(["../docs/**", "!../docs"], {force: true});
-});
+
+
