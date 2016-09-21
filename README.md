@@ -4,7 +4,7 @@
 * Added gulp to install and publish process. 
 * Configurations to transpile work from different directories.
 * Added `bs-config.js` to make *browser-sync* from different directories.
-* Use GitHub Pages to show demo (automatically with gulp)
+* Use GitHub Pages to show [demo](https://dantesguilherme.github.io/angular2-quickstart-decouple/) (automatically with gulp)
 
 ###### Template based on https://github.com/angular/quickstart.
 
