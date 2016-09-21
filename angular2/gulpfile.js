@@ -6,9 +6,9 @@ gulp.task('default', function () {
 });
 
 gulp.task('cleanwwwroot', function(){
-    return del(["../wwwroot/**", "!../wwwroot"], {force: true});
+    return del(["../wwwroot/node_modules/**", "!../wwwroot/node_modules"], {force: true});
 });
-gulp.task('restorewwwroot', ['cleanwwwroot'], function() {
+gulp.task('restore', ['cleanwwwroot'], function() {
     gulp.src([
         'node_modules/@angular/**/*.js',
         'node_modules/angular2-in-memory-web-api/*.js',
@@ -22,14 +22,13 @@ gulp.task('restorewwwroot', ['cleanwwwroot'], function() {
     ], { base: './node_modules' }).pipe(gulp.dest('../wwwroot/node_modules'));
 });
 
-gulp.task('cleandocs', ['restorewwwroot'], function(){
+gulp.task('cleandocs', function(){
     return del(["../docs/**", "!../docs"], {force: true});
 });
 gulp.task('docs', ['cleandocs'], function() {
     gulp.src('../wwwroot/**/*.*')
     .pipe(gulp.dest('../docs/'));
 });
-gulp.task('restore', ['restorewwwroot','docs']);
 
 
 
