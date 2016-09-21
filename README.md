@@ -23,6 +23,15 @@ Uses gulp to moves the _needed_ application files and dependencies to the `wwwro
 
 Uses browser-sync to keep multiple browsers & devices in sync when building websites.
 
+### GitHub Pages as DEMO
+
+Use GitHub Pages to show your demo to the world. See this repository running [here](https://dantesguilherme.github.io/angular2-quickstart-decouple/)
+
+Configure your github repository [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/)
+
+and `run gulp` or `npm install` and then publish to github.
+
+
 ##Behind a Proxy?
 *git example*
 ```bash
