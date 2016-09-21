@@ -1,14 +1,18 @@
 # angular2-quickstart-decouple
-* Template based on https://github.com/angular/quickstart.
-* Added gulp to install process. 
+
+#### Features
+* Added gulp to install and publish process. 
 * Configurations to transpile work from different directories.
 * Added `bs-config.js` to make *browser-sync* from different directories.
+* Use GitHub Pages to show demo (automatically with gulp)
+
+###### Template based on https://github.com/angular/quickstart.
+
+### Start development
 
 ```bash
 git clone https://github.com/dantesguilherme/angular2-quickstart-decouple.git
 ```
-
-### Start development
 
 Install the npm packages described in the `package.json` and verify that it works:
 
@@ -19,9 +23,9 @@ npm start
 ```
 **You're ready to write your application.**
 
-Uses gulp to moves the _needed_ application files and dependencies to the `wwwroot` folder.
-
-Uses browser-sync to keep multiple browsers & devices in sync when building websites.
+###### * `npm install` Uses gulp to move the _needed_ application files and dependencies from `package.json` to the `wwwroot` folder.
+###### * `npm start` Compiles the application to `wwwroot` and uses gulp to move the `wwwroot` to the `docs` folder.
+###### * Uses browser-sync to keep multiple browsers & devices in sync when building websites.
 
 ### GitHub Pages as DEMO
 
@@ -29,7 +33,7 @@ Use GitHub Pages to show your demo to the world. See this repository running [he
 
 Configure your github repository [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/)
 
-and `run gulp` or `npm install` and then publish to github.
+and `npm install` then `npm start` and then publish to github.
 
 
 ##Behind a Proxy?
