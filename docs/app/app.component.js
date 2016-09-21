@@ -9,25 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ng2_scrollspy_1 = require('ng2-scrollspy');
 var AppComponent = (function () {
-    function AppComponent(scrollSpyService) {
-        this.scrollSpyService = scrollSpyService;
-        this.date = new Date();
-        this.scrollSpyService = scrollSpyService;
+    function AppComponent() {
     }
-    AppComponent.prototype.ngAfterViewInit = function () {
-        this.scrollSpyService.getObservable('window').subscribe(function (e) {
-            console.log('ScrollSpy::window: ', e);
-        });
-    };
     AppComponent = __decorate([
-        core_1.Injectable(),
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app.component.html'
+            template: '<h1>My First Angular 2 App</h1>'
         }), 
-        __metadata('design:paramtypes', [ng2_scrollspy_1.ScrollSpyService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
