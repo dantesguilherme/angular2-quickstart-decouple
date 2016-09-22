@@ -18,7 +18,9 @@ gulp.task('restore', ['cleanwwwroot'], function() {
         'node_modules/core-js/client/*.js',
         'node_modules/reflect-metadata/Reflect.js',
         'node_modules/jquery/dist/*.js',
-        'node_modules/bootstrap/dist/**/*.*'
+        'node_modules/bootstrap/dist/**/*.*',
+        'node_modules/ng2-bootstrap/**/*.js',
+        'node_modules/moment/**/*.js'
     ], { base: './node_modules' }).pipe(gulp.dest('../wwwroot/node_modules'));
 });
 
