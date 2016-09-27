@@ -62,7 +62,8 @@
     "rimraf": "^2.5.4",
 	
 	"gulp": "^3.9.1",
-  "run-sequence":"1.2.2"
+  "run-sequence":"1.2.2",
+  "gulp-html-replace": "1.6.1"
   },
   "repository": {}
 }

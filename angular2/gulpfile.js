@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var del = require('del');
 var runSequence = require('run-sequence');
+var htmlreplace = require('gulp-html-replace');
 
 gulp.task('default', function () {
     // place code for your default task here
@@ -25,7 +26,9 @@ gulp.task('htmlcss', ['apphtmlcss'], function(){
 gulp.task('rootfolder', function(){
     return gulp.src([
         'index.html'
-    ]).pipe(gulp.dest('../wwwroot'));
+    ]).pipe(htmlreplace({
+        'base': '<base href="/"/>'
+    })).pipe(gulp.dest('../wwwroot'));
 });
 gulp.task('restore', function() {
     return gulp.src([
@@ -42,11 +45,7 @@ gulp.task('restore', function() {
         'node_modules/moment/**/*.{js,js.map}'
     ], { base: './node_modules' }).pipe(gulp.dest('../wwwroot/node_modules',{force:true}));
 });
-gulp.task('build', function(callback){
-    runSequence('cleanwwwroot',
-    ['htmlcss', 'rootfolder', 'restore'],
-    callback);
-})
+
 
 gulp.task('watchapp', ['htmlcss'], function () {
     function reportChange(event){
@@ -62,15 +61,29 @@ gulp.task('watchroot', ['rootfolder'], function () {
     }
     return gulp.watch(['index.html' ],['rootfolder']).on('change', reportChange);
 });
-
-
 gulp.task('cleandocs', function(){
     return del(["../docs/**", "!../docs"], {force: true});
 });
-gulp.task('docs', ['cleandocs'], function() {
+gulp.task('copydocs',function(){
     return gulp.src('../wwwroot/**/*.*')
     .pipe(gulp.dest('../docs/'));
 });
+gulp.task('prepareIndex:docs', function(){
+    return gulp.src('index.html')
+    .pipe(htmlreplace({
+        'base': '<base href="/angular2-quickstart-decouple/"/>'
+    }))
+    .pipe(gulp.dest('../docs/'));
+});
 
-
-
+gulp.task('docs', function(callback){
+    return runSequence('cleandocs',
+    'copydocs',
+    'prepareIndex:docs',
+    callback);
+})
+gulp.task('build', function(callback){
+    return runSequence('cleanwwwroot',
+    ['htmlcss', 'rootfolder', 'restore'],
+    callback);
+})
